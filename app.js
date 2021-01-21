@@ -1,8 +1,10 @@
 //ENYE TASK PHASE 1.2: BACKEND
 const express = require("express");
-const { OK, INTERNAL_SERVER_ERROR, BAD_REQUEST } = require("http-status-codes");
-const app = express();
 const request = require("request");
+const { OK, INTERNAL_SERVER_ERROR, BAD_REQUEST } = require("http-status-codes");
+
+const port = process.env.PORT || 3000;
+const app = express();
 
 //Visiting Currency Rates URL
 app.get("/api/rates", function (req, res) {
@@ -30,7 +32,7 @@ app.get("*", function (req, res) {
   res.send("Sorry, currency rates are not available.....");
 });
 
-app.listen(80, function () {
+app.listen(port, function () {
   console.log("Serving Currency Rates Web App on Port 3000");
   console.log("Server Started");
   console.log("Listening.....");
