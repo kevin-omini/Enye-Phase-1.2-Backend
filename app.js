@@ -30,7 +30,7 @@ app.get("*", function (req, res) {
   res.send("Sorry, currency rates are not available.....");
 });
 
-app.listen(3000, function () {
+app.listen(80, function () {
   console.log("Serving Currency Rates Web App on Port 3000");
   console.log("Server Started");
   console.log("Listening.....");
